@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>My Playground</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            
+*{
+    margin:0;
+    padding:0;
+     box-sizing: border-box;
+}
+
+.flag {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    margin: 100px auto;
+}
+
+.orange,
+.white,
+.green {
+    width: 300px;
+    height: 60px;
+}
+
+.orange {
+    background: orange;
+}
+
+.white {
+    background: white;
+}
+
+.green {
+    background: green;
+}
+
+/* Common message styling */
+
+.message {
+    position: absolute;
+    left: calc(100% + 25px);
+    width: 300px;
+    height: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+/* Individual message positions */
+
+.orange-msg {
+    top: 0;
+    background: orange;
+}
+
+.white-msg {
+    top: 60px;
+    background: white;
+    color: black;
+}
+
+.green-msg {
+    top: 120px;
+    background: green;
+    color: white;
+}
+
+/* Orange hover */
+
+.orange:hover ~ .orange-msg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* White hover */
+
+.white:hover ~ .white-msg {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* Green hover */
+
+.green:hover ~ .green-msg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 650px) {
+    .flag {
+        width: min(300px, 45vw);
+    }
+
+    .message {
+        width: min(250px, 40vw);
+        left: calc(100% + 10px);
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="flag">
+
+            <div class="orange"></div>
+            <div class="white"></div>
+            <div class="green"></div>
+
+            <div class="message orange-msg">
+                <h2>SAFFRON</h2>
+                <p>Courage and Sacrifice</p>
+            </div>
+
+            <div class="message white-msg">
+                <h2>WHITE</h2>
+                <p>Peace and Truth</p>
+            </div>
+
+            <div class="message green-msg">
+                <h2>GREEN</h2>
+                <p>Growth and Prosperity</p>
+            </div>
+
+        </div>     
+        <script src="script.js"></script>
+    </body>
+</html>
